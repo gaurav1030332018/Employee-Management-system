@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        {% include 'navbar.html' %}
+        <h1>This is our home page</h1>
+        
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti, similique cum eos nihil aperiam? Obcaecati natus, velit, illum similique maxime voluptatem doloremque id temporibus provident incidunt officiis deleniti sequi.</p>
+        <button>Contact US</button>
+
+        <!--accessing dynamic values-->
+        {% if isActive %}
+        <div>
+            <h1>Name  is {{name}}</h1>
+            <h1>Student name:{{student.student_name}}</h1>
+            <h1>Student collage is:{{student.student_collage}}</h1>
+            <h1>Student_city is:{{student.student_city}}</h1>
+
+            <h1>Favorite Programs</h1>
+            {% for p in list_of_program %}
+
+            <h2>{{p}}</h2>
+
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
